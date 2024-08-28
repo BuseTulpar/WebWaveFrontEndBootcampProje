@@ -1,0 +1,754 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-size: 1rem;
+    letter-spacing: 0.15px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.search-login {
+    display: flex;
+    align-items: center;
+}
+
+.search-login input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slider {
+ 
+    position: relative;
+    width: 100%;
+    max-width: 1100px; /* Maksimum genişlik, ihtiyaca göre değişebilir */
+    margin: auto; 
+    padding-top: 50px; /* Üstten boşluk */
+    padding-bottom: 50px; /*Alttan boşluk*/
+    box-sizing: border-box;
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center; /* Dikeyde ortalar */
+}
+
+.slider-container {
+    /*display: flex;
+    transition: transform 0.5s ease-in-out;*/
+    position: relative;
+    width: 100%;
+    height: auto; /* Yükseklik dinamik*/
+    overflow: visible;
+    justify-content: center;
+    align-items: center; /* Dikeyde ortalar */
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Görselleri yatay ortalamak için */
+    cursor: pointer;
+    
+}
+
+.slide img {
+    width: 100%;
+    height: auto; /* Görsellerin orantısını kor */
+    display: block;
+}
+.prev, .next { /*okların ayarları*/
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    border-radius: 50%; /* Tam yuvarlak buton */
+    font-size: 18px; /* Ok simgeleri büyüklüğü */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #bbb; /* Gri çerçeve */
+    z-index: 1000; /* Ön planda olması için */
+    color: #4CAF50; /* Yeşil ok simgeleri rengi */
+    border-radius: 50%; /* Yuvarlak buton */
+    transform: translateY(-50%); /* Butonu tam ortalar */
+
+}
+
+.prev {
+    left: -20px; /* Görselin solunda ortalanmasını sağlar */
+}
+
+
+.next {
+    right: -20px; /* Görselin sağında ortalanmasını sağlar */
+}
+
+
+.slider-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.dot.active {
+    background-color: #4CAF50;
+}
+
+.partner-slider {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto; /* Partner slider'ı sayfanın ortasında konumlandır */
+    width: 100%; /* Slider genişliği */
+    justify-content: center; /* Yatayda ortalar */
+    align-items: center; /* Dikeyde ortalar */
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+.partner-slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%; /* Slider genişliği */
+    justify-content: center;
+    align-items: center; /* Dikeyde ortalar */
+    
+}
+
+.partner-slide {
+    flex: 0 0 auto; /* Her bir slaytın genişliğini otomatik olarak ayarla */
+    padding: 10px; /* Aralıklar için padding */
+}
+
+.partner-slide img {
+    max-width: 150px; /* Logo boyutunu ayarla */
+    height: auto;
+    display: block;
+    margin: auto; /* Resimleri ortala */
+    width: 100%; /* Resimlerin slider genişliğine uymasını sağlar */
+    overflow: hidden;
+}
+
+.partner-prev, .partner-next {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #bbb; /* Gri çerçeve */
+    color: #4CAF50;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transform: translateY(-50%);
+    overflow: visible;
+    
+}
+
+.partner-prev {
+    left: -20px;
+    
+
+}
+
+.partner-next {
+    right: -20px;
+   /* background: url(/img/rightArrow.svg) /*sonradan buna çevrilebilir*/
+}
+
+
+
+.events {
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.events h2 {
+    color: #333;
+}
+
+.event-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.event-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-card img {
+    width: 100%;
+}
+
+.event-card h3 {
+    color: #4CAF50;
+    margin: 10px 0;
+}
+
+.see-all-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 36px;
+    color: black; /* Kapanış butonunu siyah yap */
+    cursor: pointer;
+}
+
+/*Etkinlikler*/
+.events{
+    background-color: #F6f6f6;
+}
+
+.event-cards {
+    display: flex;
+    flex-wrap: wrap; /* İçeriğin sarmasını sağlar */
+    gap: 16px; /* Kutucuklar arasındaki boşluk */
+    justify-content: space-between; /* Kutucukları genişlik boyunca eşit şekilde dağıtır */
+    padding: 24px; /* Kapsayıcıya iç boşluk ekler */
+    box-sizing: border-box; /* Padding ve border'ı genişlik ve yüksekliğe dahil eder */
+
+}
+
+.event-card {
+    width: calc(33.333% - 16px); /* Üç kutucuk yan yana olacak şekilde genişlik ayarlandı */
+    height: 403px; /* Yüksekliği ayarlayın */
+    border: 1px solid #ddd; /* Kenarlık */
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px; /* İç boşluk */
+    box-sizing: border-box; /* Padding ve border genişlikten düşülür */
+    margin: 0; /* Dış boşluk kaldırıldı */
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px; /* Resim yüksekliğini ayarlayın */
+    object-fit: cover; /* Resmin kutu içine sığmasını sağlar */
+}
+
+.event-card h3 {
+    margin: 16px 0 8px;
+    color: #000000; /* Metin rengi siyah */
+}
+
+.event-card p {
+    margin-bottom: 16px;
+    color: #000000; /* Metin rengi siyah */
+}
+
+.chip-container {
+    display: flex;
+    gap: 8px; /* Chipler arasındaki boşluk */
+    margin-bottom: 16px;
+}
+
+.chip {
+    background-color: #f6f8ff;
+    color: #293349;
+    border: 1px solid rgba(41, 51, 73, 0.7);
+    border-radius: 16px;
+    padding: 4px 8px;
+}
+
+.chip-label {
+    font-size: 0.8125rem;
+}
+
+button {
+    background-color: #4CAF50;/* Buton rengi */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+
+/* Neden Techcareer.net? Bölümü */
+.why-techcareer {
+    padding: 50px 0;
+    background-color:#fff;
+}
+
+.why-techcareer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.why-techcareer h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    width: 30%;
+    text-align: center;
+}
+
+.feature-item img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Kariyer Rehberiyle Geliş Bölümü */
+.career-guide {
+    padding: 50px 0;
+    background-color: #e0ffe0;
+}
+
+.career-guide .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.career-guide-content {
+    width: 60%;
+}
+
+.career-guide-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.career-guide-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.career-guide-content button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.career-guide-image {
+    width: 35%;
+}
+
+.career-guide-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Bizi Katılımcılarımızdan Dinle Bölümü */
+.participants {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.participants-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.participants-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.participants-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.participants-item {
+    flex: 0 0 50%; /* Her bir item slider'ın yarısını kaplasın */
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+.participants-item img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+.participants-item p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.participants-item h4 {
+    margin: 10px 0;
+    color: #333;
+}
+
+.participants-item span {
+    color: #666;
+}
+
+.see-all-participants {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+.see-all-participants:hover {
+    background-color: #45a049;
+}
+
+.prev-participant-slide, .next-participant-slide {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev-participant-slide {
+    left: 10px;
+}
+
+.next-participant-slide {
+    right: 10px;
+}
+
+.prev-participant-slide:hover, .next-participant-slide:hover {
+    background-color: #45a049;
+}
+
+/* Okları gizleme ve stil ayarları */
+.prev-participant-slide, .next-participant-slide {
+    display: block;
+}
+
+
+/*3 ikon kısmı*/
+
+.HemenBasvurIcons {
+    padding: 40px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.cards {
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.card {
+    max-width: 300px;
+}
+
+.card img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.card a {
+    color: #00C26D;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+
+/* Şirketiniz için Teknoloji yeteneği mi arıyorsunuz? */
+.contact-section {
+    background-color: #2f3e53;
+    padding: 40px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-section h2 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+.contact-section p {
+    color: white;
+}
+
+.contact-section .contact {
+    margin-top: 20px;
+    color: #4CAF50; /* Yeşil renk */
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* İki öğe arasındaki boşluk */
+    margin-top: 10px;
+}
+
+.contact-info a {
+    color: white; /* Beyaz renk */
+    text-decoration: none; /* Altına çizgi olmaması */
+}
+
+.contact-info a:hover {
+    text-decoration: none; /* Altına çizgi olmaması */
+}
+
+.divider {
+    border: none;
+    border-left: 1px solid white; /* Çizginin rengi */
+    height: 20px; /* Çizginin yüksekliği */
+    margin: 0 10px; /* Çizgi ile metin arasındaki boşluk */
+}
+
+
+.contact-section form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-section input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.contact-section button:hover {
+    background-color: #45a049;
+}
+
+/* footer */
+footer {
+    background-color: #f4f4f4;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-top {
+    margin-bottom: 30px;
+}
+
+.footer-top h2 {
+    margin-bottom: 15px;
+}
+
+.footer-top form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-top input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer-top button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.footer-top button:hover {
+    background-color: #45a049;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    width: 200px;
+    text-align: left;
+}
+
+.footer-column h4 {
+    margin-bottom: 15px;
+    color: #bdbdbd;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #9aa0ac;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    border-top: 1px solid #4a5568;
+    padding-top: 20px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer-social img {
+    width: 24px;
+}
+
+.footer-copy p {
+    margin: 10px 0;
+    color: #9aa0ac;
+}
