@@ -1,11 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Techcareer.net Klonu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/script.js"></script>
 </head>
 <body>
+    <!-- Üst Bar -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/techcareer-logo.svg" alt="Techcareer.net Logo" style="width: 150px; height: auto"; >
+            </div>
+            <div class="search-login">
+                <input type="text" placeholder="Etkinlik, İş İlanı, Blog Ara">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Etkinlikler</a></li>
+                    <li><a href="#">İş İlanları</a></li>
+                    <li><a href="#">Eğitimler</a></li>
+                    <li><a href="#">Komünite</a></li>
+                    <li><a href="#">Şirketler</a></li>
+                </ul>
+            </nav>
+            <button class="login-btn">Giriş / Üye Ol</button>
+        </div>
+        
+    </header>
+
+<main>
+    <!-- Slider Bölümü -->
+<div class="slider">
+    <div id="slider-container" class="slider-container">
+        <!-- Slaytlar JavaScript ile buraya eklenecek -->
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div id="slider-controls" class="slider-controls">
+        <!-- Noktalar (dots) JavaScript ile buraya eklenecek -->
+    </div>
+</div>
+
+
+    <!-- Partner Logoları -->
+<div class="partner-slider">
+    <div class="partner-slider-container">
+        <!-- Slider içeriği buraya eklenecek -->
+    </div>
+    <button type="button" class="partner-prev">‹</button>
+    <button type="button" class="partner-next">›</button>
+</div>
+
     
+    <!--Etkinlikler-->
+    <div class="events">
+        <h2>Başvurunu Bekleyen Etkinlikler</h2>
+        <div id="event-cards-container" class="event-cards">
+          <!-- Etkinlikler burada JavaScript ile eklenecek -->
+        </div>
+        <button class="see-all-btn">Tüm Etkinlikleri Gör</button>
+      </div>
+      
+
+    <!-- Neden Techcareer.net? Bölümü -->
+<div class="why-techcareer">
+    <div class="container">
+        <h2>Neden Techcareer.net?</h2>
+        <div class="features">
+            <div class="feature-item">
+                <img src="img/feature1.svg" alt="Ücretsiz etkinliklere katıl">
+                <h3>Ücretsiz etkinliklere katıl</h3>
+                <p>Yolun başındasın ama ne güzel aşamasındasın! Sektörün için gereken tüm becerileri burada öğrenmeye ücretsiz etkinliklerle başlayacaksın.</p>
+            </div>
+            <div class="feature-item">
+                <img src="img/feature2.svg" alt="Kendini kanıtla">
+                <h3>Kendini kanıtla</h3>
+                <p>Bootcamp, Hackathon ve Hiring Challenge etkinliklerine katılarak hem becerilerini geliştirecek hem de ödül kazanma fırsatı yakalayacaksın.</p>
+            </div>
+            <div class="feature-item">
+                <img src="img/feature3.svg" alt="İş fırsatı yakala">
+                <h3>İş fırsatı yakala</h3>
+                <p>Sektöründe lider teknoloji şirketleriyle tanışacak ve iş fırsatları yakalayacaksın.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kariyer Rehberiyle Geliş Bölümü -->
+<div class="career-guide">
+    <div class="container">
+        <div class="career-guide-content">
+            <h2>Kariyer Rehberi’yle Geliş</h2>
+            <p><strong>Yeni teknoloji kariyerini seçmeye hazır mısın?</strong><br>
+            Teknoloji alanında kariyer yapmak istiyor ancak hangi pozisyonu seçeceğini veya seçtiğin pozisyonda hangi adımlardan geçmen gerektiğini bilmiyorsan, Kariyer Rehberi ile en doğru yerdesin!</p>
+            <button>Hemen İncele</button>
+        </div>
+        <div class="career-guide-image">
+            <img src="img/career-guide.svg" alt="Kariyer Rehberi">
+        </div>
+    </div>
+</div>
+
+<!-- Bizi Katılımcılarımızdan Dinle Bölümü -->
+<div class="participants">
+    <div class="participants-container">
+        <h2>Bizi Katılımcılarımızdan Dinle</h2>
+        <div class="participants-slider">
+            <div class="participants-wrapper">
+                <!-- Katılımcıların ekleneceği yer -->
+            </div>
+        </div>
+        <button class="prev-participant-slide">&#10094;</button>
+        <button class="next-participant-slide">&#10095;</button>
+        <button class="see-all-participants">Tüm Yorumları Gör</button>
+    </div>
+</div>
+
+
+<!--Bootcamp/Hackathon/Hiring Challenge iconları kısmı-->
+
+<div class="HemenBasvurIcons">
+    <div class="cards">
+        <div class="card">
+            <img src="icon1.png" alt="Bootcamp">
+            <h3>Bootcamp</h3>
+            <p>Bootcamp etkinlikleri, yazılım teknolojileri, veri bilimi, ürün yönetimi gibi teknoloji konularda düzenlenir. Hem eğitim alabilir, hem de o alanda işe başlayabilecek kadar fazla bilgi ve donanım kazanabilirsiniz.</p>
+            <a href="#">Hemen Başvur</a>
+        </div>
+        <div class="card">
+            <img src="icon2.png" alt="Hackathon">
+            <h3>Hackathon</h3>
+            <p>Hackathon etkinliklerinde takımlar halinde veya bireysel olarak yarışacaksınız. Etkinlik için belli bir tasarım verilir ve yeni fikirler, yeni dijital ürünler üretmeniz, sonra da bunları kodlaması istenir.</p>
+            <a href="#">Hemen Başvur</a>
+        </div>
+        <div class="card">
+            <img src="icon3.png" alt="Hiring Challenge">
+            <h3>Hiring Challenge</h3>
+            <p>Hiring Challenge yarışmalarında Android, iOS, algoritma veya kod hatası gibi problemleri belirli bir zaman aralığı içerisinde çözmeye çalışacaksın. Bu yarışmalarda algoritma tasarımı, özgünlüğe ve kod kalitesine göre puan alırsın.</p>
+            <a href="#">Hemen Başvur</a>
+        </div>
+    </div>
+</div>
+
+<!-- Şirketiniz için Teknoloji yeteneği mi arıyorsunuz? kısmı -->
+<div class="contact-section">
+    <h2>Şirketiniz için Teknoloji yeteneği mi arıyorsunuz?</h2>
+    <p>Birlikte etkinlik düzenlemek ve size ulaşmamız için şirket e-mail adresinizi girin!</p>
+    <form>
+        <input type="email" placeholder="Şirket E-Mail Adresiniz">
+        <button type="submit">Gönder</button>
+    </form>
+    <p class="contact">Tüm soru ve önerileriniz için;</p>
+    <div class="contact-info">
+        <p><a href="mailto:hello@techcareer.net">hello@techcareer.net</a></p>
+        <hr class="divider">
+        <p><a href="tel:02164687600">0216 468 76 00</a></p>
+    </div>
+</div>
+
+</main>
+
+<!--Footer kısmı-->
+
+<footer>
+<div class="footer-bottom">
+    <div class="footer-column">
+        <h4>TECHCAREER</h4>
+        <ul>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Etkinlikler</a></li>
+            <li><a href="#">Şirketler İçin</a></li>
+            <li><a href="#">Eğitmen Ol</a></li>
+            <li><a href="#">İş Birliği</a></li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h4>BAŞVUR</h4>
+        <ul>
+            <li><a href="#">Bootcamp</a></li>
+            <li><a href="#">Hackathon</a></li>
+            <li><a href="#">Hiring Challenge</a></li>
+            <li><a href="#">İş İlanları</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h4>SENİN İÇİN</h4>
+        <ul>
+            <li><a href="#">Komünite</a></li>
+            <li><a href="#">TDC</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Podcast</a></li>
+            <li><a href="#">Kariyer Rehberi</a></li>
+            <li><a href="#">Teknik Sözlük</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h4>VERİ POLİTİKAMIZ</h4>
+        <ul>
+            <li><a href="#">Aydınlatma Metni</a></li>
+            <li><a href="#">Hizmet Sözleşmesi</a></li>
+            <li><a href="#">Açık Rıza Metni</a></li>
+            <li><a href="#">Çerez Politikası</a></li>
+        </ul>
+    </div>
+</div>
+<div class="footer-copy">
+    <div class="footer-social">
+        <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="icon-instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="icon-linkedin.png" alt="LinkedIn"></a>
+        <a href="#"><img src="icon-youtube.png" alt="YouTube"></a>
+    </div>
+    <p>&copy; Copyright 2024</p>
+    <p><a href="#">Tüm hakları saklıdır</a> | <a href="#">support@techcareer.net</a></p>
+</div>
+</footer>
 </body>
 </html>
