@@ -532,9 +532,6 @@ button {
     border-radius: 8px; /* Köşeleri yuvarlaklaştırır */
 }
 
-.participants-item-content p::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Kaydırıcı (thumb) hover rengi */
-}
 
 /* İsim ve rol kısmı */
 .participants-item h4,
@@ -569,22 +566,20 @@ button {
 
 /* Tüm yorumları gör butonu */
 .see-all-participants {
-    margin-top: 20px;
     background-color: #4CAF50;
     border: none;
     color: white;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    padding: 8px 22px;
-    position: absolute;
     border-radius: 5px; /* Köşeleri yuvarlat */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Yatayda ortalama */
+    margin: 20px auto; /* Butonu yatayda ortalamak için */
+    display: block; /* Butonu blok seviyesinde yapar ve ortalanmasını sağlar */
+    max-width: 200px; /* Gerekirse genişliği sınırlayabilirsiniz */
+    width: 100%; /* Butonun genişliğini yüzdeye göre ayarla */
+    box-sizing: border-box; /* Padding ve border'ın genişliğe dahil edilmesi */
    
 }
 
@@ -820,4 +815,137 @@ footer {
 .footer-copy p {
     margin: 10px 0;
     color: #9aa0ac;
+}
+
+/* Katılımcıların genel bölümü */
+.info-section {
+    padding: 40px 0;
+    background-color: #292F54; /* Lacivert arka plan */
+    color: #fff; /* Yazı rengi beyaz */
+}
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.info-text h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.info-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.highlight {
+    color: #4CAF50; /* Keşfet butonunun rengi */
+}
+
+.explore-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.info-image {
+    flex: 1;
+    text-align: right; /* Resmi sağa hizala */
+}
+
+.info-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/*katılımcı yorumları*/
+/* Katılımcılar Sayfası Bölümü */
+.participants-page-section {
+    padding: 48px 0;
+    background-color: #f9f9f9;
+}
+
+/* Katılımcı konteyneri */
+.participants-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Grid düzeni */
+.participants-page-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Kartlar arasındaki boşluk */
+}
+
+/* Katılımcı kartı */
+.participant-page-card {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px); /* Üç kartın yan yana olmasını sağlar, gap'ı çıkarır */
+    box-sizing: border-box;
+}
+
+/* Fotoğraf */
+.participant-page-card img {
+    width: 100px; /* Fotoğraf genişliği */
+    height: 100px; /* Fotoğraf yüksekliği */
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px; /* Kartın içinde boşluk */
+}
+
+/* İçerik alanı */
+.participant-page-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* İçeriği yukarı hizala */
+    padding: 10px;
+    flex: 1; /* İçerik alanının fotoğrafın kalan kısmını kaplamasını sağlar */
+}
+
+/* Yorum */
+.participant-page-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* İsim */
+.participant-page-info h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Rol */
+.participant-page-info span {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Responsive ayarlar */
+@media (max-width: 768px) {
+    .participant-page-card {
+        width: calc(100% - 20px); /* Tek sütun yapısı */
+    }
 }
