@@ -259,16 +259,6 @@ nav ul li a {
     margin-top: 20px;
 }
 
-.close-btn {
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    font-size: 36px;
-    color: black; /* Kapanış butonunu siyah yap */
-    cursor: pointer;
-}
-
-/*Etkinlikler*/
 .events{
     background-color: #F6f6f6;
 }
@@ -341,34 +331,43 @@ button {
 }
 
 
-
 /* Neden Techcareer.net? Bölümü */
 .why-techcareer {
     padding: 50px 0;
-    background-color:#fff;
+    background-color: #fff;
+    box-sizing: border-box; /* Tüm alt elemanlar için geçerli olur */
+  
 }
 
 .why-techcareer .container {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    box-sizing: inherit; /* Üst elemandan (why-techcareer) miras alır */
+    padding: 0 20px;
 }
 
 .why-techcareer h2 {
     font-size: 28px;
     margin-bottom: 30px;
+    text-align: left; /* Başlığı sola hizala */
+    margin-left: 180px; /*Neden techcareer başlığına sola boşluk koyduk ama sonradan stabilize edilebilr*/
 }
 
+
 .features {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; /* Elemanlar arasında boşluk bırak */
 }
 
 .feature-item {
-    width: 30%;
-    text-align: center;
+
+    text-align: left; /* İçeriği sola hizala */
+    padding: 0 10px; /* Daha az padding */
+    margin-bottom: 20px; /* Daha az boşluk */
 }
+
 
 .feature-item img {
     width: 80px;
@@ -384,12 +383,15 @@ button {
 .feature-item p {
     font-size: 16px;
     color: #555;
-}
+} 
+
 
 /* Kariyer Rehberiyle Geliş Bölümü */
 .career-guide {
     padding: 50px 0;
-    background-color: #e0ffe0;
+    background-color: rgba(239, 255, 235, 0.9);
+    position: relative;
+    
 }
 
 .career-guide .container {
@@ -398,6 +400,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgba(239, 255, 235, 0.9)
 }
 
 .career-guide-content {
@@ -413,6 +416,10 @@ button {
     font-size: 16px;
     margin-bottom: 20px;
     color: #333;
+    
+}
+.career-guide-content p strong {
+    color: #00C26D; /* Kalın metnin rengi */
 }
 
 .career-guide-content button {
@@ -426,7 +433,11 @@ button {
 }
 
 .career-guide-image {
-    width: 35%;
+    width: 40%;
+    right: 0; /* Sağ alt köşeye yapışmasını sağlar */
+    bottom: 0; /* Sağ alt köşeye yapışmasını sağlar */
+    overflow: hidden; /* Resmin taşmasını engeller */
+    position: absolute;
 }
 
 .career-guide-image img {
@@ -435,11 +446,15 @@ button {
 }
 
 /* Bizi Katılımcılarımızdan Dinle Bölümü */
+/* Katılımcıların genel bölümü */
 .participants {
-    padding: 20px;
+    padding-top: 48px;
+    padding-bottom: 48px;
     background-color: #f9f9f9;
+    overflow: hidden; /* İçerik taşmasını engeller */
 }
 
+/* Katılımcı konteyneri */
 .participants-container {
     position: relative;
     width: 100%;
@@ -447,6 +462,7 @@ button {
     margin: 0 auto;
 }
 
+/* Slider görünümü */
 .participants-slider {
     display: flex;
     overflow: hidden;
@@ -454,55 +470,79 @@ button {
     width: 100%;
 }
 
+/* Slider'ın içeriği */
 .participants-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
+/* Katılımcı öğesi stil */
 .participants-item {
-    flex: 0 0 50%; /* Her bir item slider'ın yarısını kaplasın */
+    flex: 0 0 calc(50% - 20px); /* İki kutunun yan yana gelmesi için genişlik */
     box-sizing: border-box;
     padding: 20px;
-    text-align: center;
+    text-align: left;
+    display: flex;
+    align-items: flex-start; /* İçerikleri dikeyde yukarı hizala */
+    border: 1px solid #ddd; /* Dikdörtgen sınırı */
+    border-radius: 8px; /* Köşeleri yuvarlat */
+    background: #fff; /* Arka plan rengi */
+    margin: 0 10px; /* Yan boşluklar */
+    height: 200px; /* Sabit yükseklik */
+    overflow: hidden; /* İçerik taşmasını engeller */
 }
 
+/* Katılımcı fotoğraf */
 .participants-item img {
-    max-width: 100px;
-    border-radius: 50%;
+    width: 100px; /* Fotoğrafın genişliği */
+    height: 100px; /* Fotoğrafın yüksekliği */
+    border-radius: 8px; /* Köşeleri yuvarlat */
+    object-fit: cover; /* Fotoğrafı düzgün sığdırır */
+    margin-right: 20px; /* İçeriğin sağında boşluk bırak */
 }
 
-.participants-item p {
-    font-size: 1rem;
-    margin: 10px 0;
+/* İçerik alanı */
+.participants-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Yükseklik 100% */
+    overflow: hidden; /* İçerik taşmasını engeller */
 }
 
-.participants-item h4 {
-    margin: 10px 0;
-    color: #333;
+/* Quote kısmı scrollable olacak */
+.participants-item-content p {
+    overflow-y: auto; /* Dikey kaydırma özelliği */
+    max-height: 100px; /* Sadece quote kısmının yüksekliği */
+    margin: 0; /* Marginleri kaldır */
+    padding-right: 8px; /* Scrollbar için sağ padding */
 }
 
+/* Webkit tarayıcılar için scrollbar stil ayarları */
+.participants-item-content p::-webkit-scrollbar {
+    width: 8px; /* Scrollbar genişliği */
+}
+
+.participants-item-content p::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Scrollbar izinin rengi */
+}
+
+.participants-item-content p::-webkit-scrollbar-thumb {
+    background: #888; /* Kaydırıcı (thumb) rengi */
+    border-radius: 8px; /* Köşeleri yuvarlaklaştırır */
+}
+
+.participants-item-content p::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Kaydırıcı (thumb) hover rengi */
+}
+
+/* İsim ve rol kısmı */
+.participants-item h4,
 .participants-item span {
-    color: #666;
+    margin: 5px 0; /* Margin ayarları */
 }
 
-.see-all-participants {
-    margin-top: 20px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    
-}
-
-.see-all-participants:hover {
-    background-color: #45a049;
-}
-
+/* Oklar için stil */
 .prev-participant-slide, .next-participant-slide {
     background-color: #4CAF50;
     border: none;
@@ -527,17 +567,40 @@ button {
     background-color: #45a049;
 }
 
-/* Okları gizleme ve stil ayarları */
-.prev-participant-slide, .next-participant-slide {
-    display: block;
+/* Tüm yorumları gör butonu */
+.see-all-participants {
+    margin-top: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 22px;
+    position: absolute;
+    border-radius: 5px; /* Köşeleri yuvarlat */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Yatayda ortalama */
+   
 }
+
+.see-all-participants:hover {
+    background-color: #45a049;
+}
+
+
+
 
 
 /*3 ikon kısmı*/
 
 .HemenBasvurIcons {
     padding: 40px;
-    background-color: #f4f4f4;
+    background-color: white;
     text-align: center;
 }
 
@@ -546,7 +609,7 @@ button {
     padding: 40px;
     display: flex;
     justify-content: space-around;
-    text-align: center;
+    text-align: left;
 }
 
 .card {
@@ -558,7 +621,7 @@ button {
     margin-bottom: 20px;
 }
 
-.card h3 {
+.card h2 {
     color: #333;
     margin-bottom: 15px;
 }
@@ -578,7 +641,13 @@ button {
 .card a:hover {
     text-decoration: underline;
 }
-
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor; /* Ok simgesinin rengi, metin rengiyle aynı olacak */
+    transition: fill 0.3s ease;
+    vertical-align: middle; /* Simgeyi metinle aynı hizada tutar */
+}
 
 /* Şirketiniz için Teknoloji yeteneği mi arıyorsunuz? */
 .contact-section {

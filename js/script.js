@@ -205,25 +205,25 @@ setInterval(showNextTestimonial, 5000); // Her 5 saniyede bir kaydırma
 document.addEventListener('DOMContentLoaded', () => {
     const participants = [
         {
-            img: 'img/',
+            img: 'img/participants/Cengiz_Ergun_551b013b1b.webp',
             quote: 'Haftanın 3 günü aynı saatte aynı hedefe odaklanmış arkadaşlarla, bilgisini elinden gelen tüm çabayla sınıfa aktarmaya çalışan hocamızla, çok güzel bir iletişimi olan techcareer ekibiyle geçen bu yaklaşık 1 aylık dopdolu maratondan dolayı çok mutluyum. Bana moral, bilgi ve disiplin sağlayan bu program için çok teşekkür ederim.',
             name: 'Cengiz Ergün',
             role: 'Hyper Company Front-End Angular Bootcamp'
         },
         {
-            img: 'img/',
+            img: 'img/participants/Serhat_Dokumaci_16f2e4c3c6.webp',
             quote: 'Sigortam.net QA Bootcamp\'i ile dolu dolu ve çok keyifli altı hafta geçirdim. Bootcamp süreci meslek hayatımın başlangıcında bana yön veren ve istediğim alanda çalışmama vesile olan güzel bir süreç oldu. Bu süreçte çok eğlendiğim gibi yeni arkadaşlıklar da edindim ve kendimi de çok iyi bir biçimde geliştirdim. Eğitmenimiz, Sigortam.net ekibi ve Techcareer.net ekibi bana her alanda destek verip, tüm süreçlerde emin adımlarla ilerlememe yardımcı oldular. Bootcamp süreci sonunda Sigortam.net ailesine QA Specialist olarak katıldım. Bu imkânı bize sağladığı için Techcareer.net ailesine ve emeği geçen herkese çok teşekkür ederim, iyi ki katılmışım.',
             name: 'Serhat Dokumacı',
             role: 'Sigortam.net Software QA Bootcamp'
         },
         {
-            img: 'img/',
+            img: 'img/participants/Cansel_Basak_09462f71c1.webp',
             quote: 'Herkesi tanıdığım ve böyle bir eğitimi denemediğim için çok memnunum. Süreç oldukça verimli ve eğlenceli geçti. Eğlenerek öğrenmek diyebilirim :)',
             name: 'Cansel Başak',
             role: 'Tech Recruitment Bootcamp'
         },
         {
-            img: 'img/',
+            img: 'img/participants/Burak_Karacakaya_2ccd3613c7.webp',
             quote: 'Merhaba, Gıda Mühendisi olarak sektör değiştirmeye ve yazılımcı olmaya karar vermiştim. Kendimi interneteki kaynaklardan çalışarak ve öğrenerek geliştirdim, Techcareer.net platformunun .Net ile ilgili düzenlediği bootcamp programına katıldım ve sağladıkları destek sayesinde öğrendim..Net teknolojisi ile ilk işime başladım.',
             name: 'Burak Karacakaya',
             role: '.Net Core Back-end Bootcamp'
