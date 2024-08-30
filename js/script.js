@@ -1,3 +1,33 @@
+// Hamburger menü ve mobil navigasyon kontrolü
+// Hamburger menüye tıklanınca mobil menüyü açar
+document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    document.querySelector('.mobile-menu').classList.add('active');
+    this.style.display = 'none'; // Hamburger menüyü gizler
+});
+
+// Kapatma butonuna tıklanınca mobil menüyü kapatır
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('.mobile-menu').classList.remove('active');
+    document.querySelector('.hamburger-menu').style.display = 'flex'; // Hamburger menüyü tekrar gösterir
+});
+
+// Sayfa yüklendiğinde veya pencere boyutu değiştiğinde hamburger menüyü ve mobil menüyü kontrol eder
+function handleResize() {
+    if (window.innerWidth > 768) { // 768px ve üstü için
+        document.querySelector('.hamburger-menu').style.display = 'none'; // Hamburger menüyü gizle
+        document.querySelector('.mobile-menu').classList.remove('active'); // Mobil menüyü kapat
+    } else {
+        document.querySelector('.hamburger-menu').style.display = 'flex'; // Küçük ekranlarda hamburger menüyü göster
+    }
+}
+
+// Sayfa yüklendiğinde ve pencere boyutu değiştiğinde fonksiyonu çağır
+window.addEventListener('load', handleResize);
+window.addEventListener('resize', handleResize);
+
+
+
+
 //Slides kısmı
 document.addEventListener('DOMContentLoaded', () => {
     const slidesData = [
