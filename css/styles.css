@@ -40,6 +40,8 @@ nav {
     display: flex;
     flex: 1;
     justify-content: center; /* Menü öğelerini ortalar */
+    font-weight: bold;
+    font-size: 0.875rem;
 }
 
 nav ul {
@@ -127,6 +129,8 @@ nav ul li a {
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1000; /* Hamburger menüden biraz daha düşük z-index */
+    font-size: 0.875rem;
+    font-weight: bold;
 }
 
 .mobile-menu.active {
@@ -516,6 +520,19 @@ button.event-button:hover {
     margin-top: 24px; /* Buton ile etkinlik kartları arasına boşluk ekler */
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+    .event-cards-container {
+        grid-template-columns: 1fr; /* Tek kolonlu grid yapısı */
+        gap: 16px; /* Kartlar arasındaki boşluğu azalt */
+    }
+
+    .event-card {
+        max-width: none; /* Kart genişliğini sınırlandırma */
+        min-height: auto; /* Yüksekliği otomatik olarak ayarla */
+    }
+}
+
 
 
 
@@ -573,7 +590,27 @@ button.event-button:hover {
     font-size: 16px;
     color: #555;
 } 
+/* Responsive Tasarım */
+@media (max-width: 992px) {
+    .features {
+        grid-template-columns: 1fr; /
+    }
+}
 
+@media (max-width: 768px) {
+    .why-techcareer h2 {
+        text-align: left;
+        margin-left: 5%; /* Daha küçük ekranlar için hizalama */
+    }
+
+    .features {
+        grid-template-columns: 1fr; /* 768 pikselin altında tek kolonlu yapı */
+    }
+
+    .feature-item {
+        text-align: left; 
+    }
+}
 
 /* Kariyer Rehberiyle Geliş Bölümü */
 .career-guide {
@@ -600,6 +637,7 @@ button.event-button:hover {
     font-size: 28px;
     margin-bottom: 20px;
     text-align: left; /* Başlığı sola hizala */
+    font-size: 1.5625rem;
    
 }
 
@@ -607,10 +645,12 @@ button.event-button:hover {
     font-size: 16px;
     margin-bottom: 20px;
     color: #333;
+    font-size: 1.125rem;
     
 }
 .career-guide-content p strong {
     color: #00C26D; /* Kalın metnin rengi */
+    font-size: 1.125rem;
 }
 
 .career-guide-content button {
@@ -634,6 +674,49 @@ button.event-button:hover {
 .career-guide-image img {
     width: 100%;
     height: auto;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 992px) {
+    .career-guide .container {
+        flex-direction: column; /* İçerik ve resmi dikey olarak yerleştirir */
+        align-items: center; /* Ortalar */
+        text-align: left; /* Metinleri ortalar */
+        position: relative; /* Konumlandırmayı resetler */
+    }
+
+    .career-guide-content {
+        width: 100%; /* İçerik genişliğini artırır */
+        padding: 0 20px; /* Kenar boşlukları ekler */
+        margin-bottom: 20px; /* Alt boşluk ekler */
+    }
+
+    .career-guide-content h2 {
+        font-size: 24px; /* Başlık boyutunu küçültür */
+        margin-bottom: 15px; /* Başlık ile paragraf arasına boşluk ekler */
+    }
+
+    .career-guide-content p {
+        font-size: 14px; /* Paragraf metin boyutunu küçültür */
+        margin-bottom: 15px; /* Paragraf ile buton arasına boşluk ekler */
+    }
+
+    .career-guide-content button {
+        width: 100%; /* Butonun genişliğini kapsayıcıya yayar */
+        padding: 15px; /* Butonun iç boşluğunu artırır */
+        font-size: 18px; /* Buton metin boyutunu artırır */
+    }
+
+    .career-guide-image {
+        position: relative; /* Resmi konumlandırır */
+        width: 100%;
+        order: -1; /* Resmi önce göster */
+        top: 0; /* Üst tarafa hizalar */
+        right: 0; /* Sağ tarafa hizalar */
+        max-width: 400px; /* Maksimum genişlik sınırı ekler */
+        margin-top: 20px; /* İçerik ile resim arasına boşluk ekler */
+        
+    }
 }
 
 /* Bizi Katılımcılarımızdan Dinle Bölümü */
@@ -776,63 +859,90 @@ button.event-button:hover {
 .see-all-participants:hover {
     background-color: #45a049;
 }
+/* Katılımcı kartları için responsive ayarlar */
 
+@media (max-width: 992px) {
+    .participants-item {
+        flex: 0 0 calc(50% - 20px); /* İki kart yan yana */
+    }
+}
 
+@media (max-width: 768px) {
+    .participants-item {
+        flex: 0 0 calc(100% - 20px); /* Tek kart */
+        width: 100%; /* Küçük ekranlarda bir öğe genişliğe %100 */
+    }
+}
 
 
 
 /*3 ikon kısmı*/
-
 .HemenBasvurIcons {
     padding: 40px;
     background-color: white;
-    text-align: center;
-}
-
-.cards {
-    background-color: white;
-    padding: 40px;
-    display: flex;
-    justify-content: space-around;
     text-align: left;
 }
 
-.card {
-    max-width: 300px;
+.HemenBasvur-cards {
+    background-color: white;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolonlu grid yapısı */
+    gap: 20px; /* Kartlar arasındaki boşluk */
 }
 
-.card img {
+.HemenBasvur-card {
+    max-width: 100%; /* Maksimum genişlik sınırını kaldır */
+}
+
+.HemenBasvur-card img {
     max-width: 100px;
     margin-bottom: 20px;
 }
 
-.card h2 {
-    color: #333;
+.HemenBasvur-card h3 {
+    color: black;
     margin-bottom: 15px;
+    text-align: left;
+    font-size: 2.0833rem;
 }
 
-.card p {
-    color: #555;
+.HemenBasvur-card p {
+    color: #000000;
     margin-bottom: 20px;
     font-size: 14px;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
-.card a {
+.HemenBasvur-card a {
     color: #00C26D;
     text-decoration: none;
     font-weight: bold;
 }
 
-.card a:hover {
+.HemenBasvur-card a:hover {
     text-decoration: underline;
 }
+
 .arrow-icon {
     width: 20px;
     height: 20px;
     fill: currentColor; /* Ok simgesinin rengi, metin rengiyle aynı olacak */
     transition: fill 0.3s ease;
-    vertical-align: middle; /* Simgeyi metinle aynı hizada tutar */
+    vertical-align: left; /* Simgeyi metinle aynı hizada tutar */
+    
 }
+
+/* Respoonsive */
+@media (max-width: 768px) {
+    .HemenBasvur-cards {
+        grid-template-columns: 1fr; /* Tek sütun yapısı */
+        gap: 10px; /* Kartlar arasındaki boşluğu azalt */
+    }
+}
+
 
 /* Şirketiniz için Teknoloji yeteneği mi arıyorsunuz? */
 .contact-section {
@@ -845,23 +955,31 @@ button.event-button:hover {
 .contact-section h2 {
     margin-bottom: 15px;
     color: white;
+    font-size: 34px;
 }
 
 .contact-section p {
     color: white;
+    font-size: 1.5038rem;
 }
 
 .contact-section .contact {
     margin-top: 20px;
     color: #00C26D; /* Yeşil renk */
+    font-size: 1rem;
+    font-weight: bold;
+
 }
 
 .contact-info {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* İki öğe arasındaki boşluk */
     margin-top: 10px;
+}
+
+.contact-info p{
+    font-size: 1rem;
 }
 
 .contact-info a {
@@ -908,6 +1026,7 @@ button.event-button:hover {
 .contact-section button:hover {
     background-color: #45a049;
 }
+
 
 /* footer */
 footer {

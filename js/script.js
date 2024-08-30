@@ -218,20 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-//Neden Techcareer.net? sonrası için 
-
-const testimonials = document.querySelector('.testimonial-slider');
-let testimonialIndex = 0;
-
-function showNextTestimonial() {
-    testimonialIndex = (testimonialIndex + 1) % testimonials.children.length;
-    testimonials.style.transform = `translateX(-${testimonialIndex * 100}%)`;
-}
-
-setInterval(showNextTestimonial, 5000); // Her 5 saniyede bir kaydırma
-
-
 //Katılımcı yorumları kısmı
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -307,4 +293,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(nextSlide, 5000); // 5 saniyede bir kaydır
 
     updateSlider(); // İlk durumda slider'ı güncelle
+});
+
+//Responsive için 
+
+  // Pencere boyutu değiştiğinde slider'ı güncelle
+  window.addEventListener('resize', () => {
+    itemsPerPage = getItemsPerPage();
+    totalSlides = Math.ceil(document.querySelectorAll('.participants-item').length / itemsPerPage);
+    updateSlider();
 });
