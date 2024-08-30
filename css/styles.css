@@ -84,7 +84,7 @@ nav ul li a {
 
 /* Giriş Butonu */
 .login-btn {
-    background-color: #4CAF50;
+    background-color: #00C26D;
     color: white;
     padding: 8px 16px;
     border: none;
@@ -257,7 +257,7 @@ nav ul li a {
     background-color: white;
     border: 1px solid #bbb; /* Gri çerçeve */
     z-index: 1000; /* Ön planda olması için */
-    color: #4CAF50; /* Yeşil ok simgeleri rengi */
+    color: #00C26D; /* Yeşil ok simgeleri rengi */
     border-radius: 50%; /* Yuvarlak buton */
     transform: translateY(-50%); /* Butonu tam ortalar */
     z-index: 999; /* Hamburger menü ve mobil menü arkasında kalması için */
@@ -291,7 +291,7 @@ nav ul li a {
     cursor: pointer;
 }
 .dot.active {
-    background-color: #4CAF50;
+    background-color: #00C26D;
 }
 
 .partner-slider {
@@ -336,7 +336,7 @@ nav ul li a {
     height: 40px;
     background-color: white;
     border: 1px solid #bbb; /* Gri çerçeve */
-    color: #4CAF50;
+    color: #00C26D;
     border-radius: 50%;
     font-size: 18px;
     display: flex;
@@ -360,99 +360,83 @@ nav ul li a {
    /* background: url(/img/rightArrow.svg) /*sonradan buna çevrilebilir*/
 }
 
-
-
+/*Etkinlikler*/
 .events {
-    padding: 20px;
-    background-color: white;
-    text-align: center;
-}
-
-.events h2 {
-    color: #333;
-}
-
-.event-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.event-card {
-    background-color: #f9f9f9;
-    padding: 15px;
-    margin: 10px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.event-card img {
-    width: 100%;
-}
-
-.event-card h3 {
-    color: #4CAF50;
-    margin: 10px 0;
-}
-
-.see-all-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.events{
     background-color: #F6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* İçerikleri yatay olarak ortalar */
+    padding: 24px; /* Kapsayıcıya iç boşluk ekler */
 }
 
-.event-cards {
-    display: flex;
-    flex-wrap: wrap; /* İçeriğin sarmasını sağlar */
-    gap: 16px; /* Kutucuklar arasındaki boşluk */
-    justify-content: space-between; /* Kutucukları genişlik boyunca eşit şekilde dağıtır */
+h2 {
+    margin-bottom: 24px; /* Başlık ile etkinlik kartları arasına boşluk ekler */
+    text-align: center; /* Başlığı ortalar */
+}
+
+.event-cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 kolonlu grid yapısı */
+    gap: 24px; /* Kartlar arasındaki boşluk */
+    justify-content: center; /* Kartları yatayda ortalar */
     padding: 24px; /* Kapsayıcıya iç boşluk ekler */
     box-sizing: border-box; /* Padding ve border'ı genişlik ve yüksekliğe dahil eder */
-
 }
 
 .event-card {
-    width: calc(33.333% - 16px); /* Üç kutucuk yan yana olacak şekilde genişlik ayarlandı */
-    height: 403px; /* Yüksekliği ayarlayın */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
     border: 1px solid #ddd; /* Kenarlık */
     border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%; /* Kartların genişliği kapsayıcının genişliğine göre ayarlanır */
+    max-width: 400px; /* Kartların maksimum genişliği artırıldı */
+    min-height: 500px; /* Kartların yüksekliği içeriğe göre ayarlanır ve minimum yüksekliği sağlar */
     padding: 24px; /* İç boşluk */
     box-sizing: border-box; /* Padding ve border genişlikten düşülür */
-    margin: 0; /* Dış boşluk kaldırıldı */
+    position: relative; /* Çizgi hizalama için göreli konumlandırma */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Kart içeriğini yukarı ve aşağıya eşit olarak yayar */
+    cursor: pointer;
+    
+}
+.event-card:hover {
+    border-color: #000000; /* Hover durumunda kenar rengini siyah yapar */
 }
 
 .event-card img {
     width: 100%;
     height: 200px; /* Resim yüksekliğini ayarlayın */
     object-fit: cover; /* Resmin kutu içine sığmasını sağlar */
+    margin-bottom: 16px; /* Resim ile içerik arasına boşluk ekler */
+    border-radius: 8px;
+}
+.event-card h3,
+.event-card p {
+    margin: 16px 0; /* Üst ve alt margin */
+    text-align: center; /* Metin ortalanır */
+    width: 100%; /* Metin alanının genişliği kart genişliğine göre ayarlanır */
 }
 
 .event-card h3 {
     margin: 16px 0 8px;
     color: #000000; /* Metin rengi siyah */
+    font-size: 1.25rem;
 }
 
 .event-card p {
     margin-bottom: 16px;
     color: #000000; /* Metin rengi siyah */
+    font-size: 0.875rem;
 }
 
 .chip-container {
     display: flex;
     gap: 8px; /* Chipler arasındaki boşluk */
     margin-bottom: 16px;
+    justify-content: center; /* Chip'leri yatayda ortalar */
 }
 
 .chip {
@@ -467,14 +451,73 @@ nav ul li a {
     font-size: 0.8125rem;
 }
 
+.event-card-footer {
+    display: flex;
+    justify-content: space-between; /* Sol ve sağda yer alan öğeleri ayırır */
+    align-items: center; /* Dikey olarak ortalar */
+    border-top: 1px solid #ddd; /* Üst kısmı ayıran çizgi */
+    padding-top: 16px; /* Çizgi ve içeriği ayıran boşluk */
+    margin-top: 16px;
+    min-height: 60px; /* Çizgilerin hizalanması için minimum yükseklik */
+}
+
+.event-card-footer .deadline {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Sol hizalar */
+    flex: 1; /* Alanı kaplaması için esneklik */
+}
+
+.event-card-footer .deadline label {
+    color: #878787;
+    margin-bottom: 4px;
+    font-size: 0.75rem;
+}
+
+.event-card-footer .deadline span {
+    color: #000000;
+    font-size: 0.875rem;
+    font-weight: bold;
+    
+}
+
+.event-card-footer .apply-button {
+    display: flex;
+    justify-content: flex-end; /* Butonu sağa hizalar */
+}
+
 button {
-    background-color: #4CAF50;/* Buton rengi */
+    background-color: #00C26D; /* Buton rengi */
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 10px 20px;
+    padding: 8px 20px;
     cursor: pointer;
 }
+/* Sadece event-button sınıfına sahip butonlar için özel stil */
+button.event-button {
+    background-color: #00C26D; /* Özel buton rengi */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 20px;
+    cursor: pointer;
+    min-width: 150px;
+    transition: background-color 0.3, filter 0.3s;/* Yalnızca renk geçişi */
+}
+
+/* Hover durumunda */
+button.event-button:hover {
+    background-color: #00a44f; /* Hover durumunda buton rengini açar */
+    filter: brightness(1.1); /* Beyazlaşma efekti */
+}
+
+.see-all-events {
+    margin-top: 24px; /* Buton ile etkinlik kartları arasına boşluk ekler */
+}
+
+
+
 
 
 /* Neden Techcareer.net? Bölümü */
@@ -556,6 +599,8 @@ button {
 .career-guide-content h2 {
     font-size: 28px;
     margin-bottom: 20px;
+    text-align: left; /* Başlığı sola hizala */
+   
 }
 
 .career-guide-content p {
@@ -570,7 +615,7 @@ button {
 
 .career-guide-content button {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #00C26D;
     color: white;
     border: none;
     cursor: pointer;
@@ -686,7 +731,7 @@ button {
 
 /* Oklar için stil */
 .prev-participant-slide, .next-participant-slide {
-    background-color: #4CAF50;
+    background-color: #00C26D;
     border: none;
     color: white;
     padding: 10px;
@@ -711,7 +756,7 @@ button {
 
 /* Tüm yorumları gör butonu */
 .see-all-participants {
-    background-color: #4CAF50;
+    background-color: #00C26D;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -808,7 +853,7 @@ button {
 
 .contact-section .contact {
     margin-top: 20px;
-    color: #4CAF50; /* Yeşil renk */
+    color: #00C26D; /* Yeşil renk */
 }
 
 .contact-info {
@@ -853,7 +898,7 @@ button {
 
 .contact-section button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #00C26D;
     border: none;
     border-radius: 4px;
     color: white;
@@ -896,7 +941,7 @@ footer {
 
 .footer-top button {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #00C26D;
     border: none;
     border-radius: 4px;
     color: white;
@@ -992,11 +1037,11 @@ footer {
     margin-bottom: 20px;
 }
 .highlight {
-    color: #4CAF50; /* Keşfet butonunun rengi */
+    color: #00C26D; /* Keşfet butonunun rengi */
 }
 
 .explore-button {
-    background-color: #4CAF50;
+    background-color: #00C26D;
     border: none;
     color: white;
     padding: 10px 20px;

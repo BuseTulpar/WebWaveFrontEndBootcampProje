@@ -187,33 +187,35 @@ window.addEventListener('resize', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const events = [
-      { title: 'PHP Prodigy: WebApp Development Bootcamp', description: 'Ücretsiz öğren, mezun ol, iş fırsatı yakala!', imageUrl: 'img/events/1200x628_1_b56ed3b165.webp' },
-      { title: 'C# Essentials Bootcamp', description: 'Ücretsiz öğren, mezun ol, iş fırsatı yakala!', imageUrl: 'img/events/1200x628_8_adf347ebfd.webp'},
-      { title: 'Business Intelligence MSSQL Workshop', description: 'Ücretsiz öğren, mezun ol, iş fırsatı yakala!', imageUrl: 'img/events/1200x628_24_337419769a.webp' }
-      
+        { title: 'PHP Prodigy: WebApp Development Bootcamp', description: 'Ücretsiz öğren, mezun ol, iş fırsatı yakala!', imageUrl: 'img/events/1200x628_1_b56ed3b165.webp', deadline: '01.09.2024' },
+        { title: 'C# Essentials Bootcamp', description: 'Ücretsiz öğren, mezun ol, iş fırsatı yakala!', imageUrl: 'img/events/1200x628_8_adf347ebfd.webp', deadline: '02.09.2024'},
+        { title: 'Business Intelligence MSSQL Workshop', description: 'Ücretsiz öğren, mezun ol, iş fırsatı yakala!', imageUrl: 'img/events/1200x628_24_337419769a.webp', deadline: '02.09.2024' }
     ];
-  
+
     const container = document.getElementById('event-cards-container');
-  
+
     events.forEach(event => {
-      const eventHtml = `
-        <div class="event-card">
-          <img src="${event.imageUrl}" alt="${event.title}">
-          <h3>${event.title}</h3>
-          <p>${event.description}</p>
-          <div class="chip-container">
-            <div class="chip"><span class="chip-label">Bootcamp</span></div>
-            <div class="chip"><span class="chip-label">İş Fırsatı</span></div>
-          </div>
-          <div>
-            <button>Başvur</button>
-          </div>
-        </div>
-      `;
-      container.innerHTML += eventHtml;
+        const eventHtml = `
+            <div class="event-card">
+                <img src="${event.imageUrl}" alt="${event.title}">
+                <h3>${event.title}</h3>
+                <p>${event.description}</p>
+                <div class="chip-container">
+                    <div class="chip"><span class="chip-label">Bootcamp</span></div>
+                    <div class="chip"><span class="chip-label">İş Fırsatı</span></div>
+                </div>
+                <div class="event-card-footer">
+                    <div class="deadline">
+                        <label>SON BAŞVURU:</label>
+                        <span>${event.deadline}</span>
+                    </div>
+                    <button class="event-button">Başvur</button>
+                </div>
+            </div>
+        `;
+        container.innerHTML += eventHtml;
     });
-  });
-  
+});
 
 
 
