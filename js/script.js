@@ -290,12 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
             quote: 'Oldukça güzel bir süreçti, uzun zamandır öğrenmek isteyip doğru yeri bulamadığım için öğrenemediğimden dolayı bu bootcamp bana ilaç gibi geldi desem yeridir :) Ahmet Hoca\'m son derece güzel ve efektif bir şekilde bizlere dersi anlattı ve derste bizlerle etkileşimde bulunarak dersten kopmamamızı sağladı. ',
             name: 'Berke Uçaker',
             role: 'SQL Bootcamp'
-        },
-        {
-            img: 'img/participants/Zeynep_Ciplak_b1c26a7216.webp',
-            quote: 'Web frontend kodlamayı öğrenme sürecimde, FroundedTech Surge Bootcamp\'in etkisi büyüktü. Ahmet Kaya\'nın rehberliğinde, 48 saat süren 5 haftalık bu bootcamp, benim için bir dönüm noktasıydı.İlk günden itibaren, HTML, CSS ve JavaScript gibi dilleri öğrenip, gerçek projeler üzerinde çalışarak teorik bilgileri pratiğe dönüştürdük. Ödev projeleri, teknik becerilerimi ve araştırma yeteneğimi geliştirdi. Hatalar yapmak, sorunlarla karşılaşmak ve bunları çözmek, kodlama sürecinin doğal bir parçasıydı ve bu sayede gerçek bir öğrenme yaşadık.Bootcamp sonunda, HTML ve CSS ile sayfa yapılandırma ve stil verme konularında kendime güvenim arttı. JavaScript ile etkileşimli web uygulamaları geliştirme yeteneğim de gelişti. Bu bootcamp\'i tamamladığım için şanslı hissediyorum. FroundedTech Surge Bootcamp, teknik becerilerimi geliştirdi ve kendime güvenimi artırdı. Ahmet Kaya\'nın rehberliği bu deneyimi unutulmaz kıldı. Bu bootcamp\'i herkese tavsiye ediyorum.',
-            name: 'Zeynep Çıplak',
-            role: 'FroundedTech Surge Bootcamp'
         }
         // Daha fazla katılımcı eklenebilir
     ];
