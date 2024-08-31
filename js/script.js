@@ -303,3 +303,23 @@ document.addEventListener('DOMContentLoaded', () => {
     totalSlides = Math.ceil(document.querySelectorAll('.participants-item').length / itemsPerPage);
     updateSlider();
 });
+
+//Footer 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var headers = document.querySelectorAll('.toggle-header');
+    headers.forEach(function(header) {
+        header.addEventListener('click', function() {
+            var content = this.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                this.querySelector('.toggle-arrow').innerHTML = '&#9660;';
+            } else {
+                content.style.display = 'block';
+                this.querySelector('.toggle-arrow').innerHTML = '&#9650;';
+            }
+        });
+    });
+});
+
