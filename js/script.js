@@ -25,6 +25,26 @@ function handleResize() {
 window.addEventListener('load', handleResize);
 window.addEventListener('resize', handleResize);
 
+//header ın dropdown işlevselliigi
+
+document.querySelectorAll('.mobile-menu .dropdown > a').forEach(function(dropdownToggle) {
+    dropdownToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        const dropdown = this.parentElement;
+        const isActive = dropdown.classList.contains('active');
+
+        // Önceki açık dropdownları kapat
+        document.querySelectorAll('.mobile-menu .dropdown').forEach(function(d) {
+            if (d !== dropdown) {
+                d.classList.remove('active');
+            }
+        });
+
+        // Tıklanan dropdown'u aç veya kapat
+        dropdown.classList.toggle('active', !isActive);
+    });
+});
 
 
 
@@ -219,7 +239,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //Katılımcı yorumları kısmı
-
 document.addEventListener('DOMContentLoaded', () => {
     const participants = [
         {
@@ -245,6 +264,38 @@ document.addEventListener('DOMContentLoaded', () => {
             quote: 'Merhaba, Gıda Mühendisi olarak sektör değiştirmeye ve yazılımcı olmaya karar vermiştim. Kendimi interneteki kaynaklardan çalışarak ve öğrenerek geliştirdim, Techcareer.net platformunun .Net ile ilgili düzenlediği bootcamp programına katıldım ve sağladıkları destek sayesinde öğrendim..Net teknolojisi ile ilk işime başladım.',
             name: 'Burak Karacakaya',
             role: '.Net Core Back-end Bootcamp'
+        },
+        {
+            img: 'img/participants/Hasan_Okcu_ecef2f93bb.webp',
+            quote: '5 haftalık süre içerisinde .Net Core ile ilgili oldukça yoğun bir eğitim aldım. Hocamızın konular hakkındaki bilgi birikimi de oldukça yeterliydi. Süreç içerisinde gerçek hayat projeleri geliştirdik ve sektöre en iyi şekilde hazırlandım. Techcareer e bana böyle bir eğitime katılma fırsatı verdiği için teşekkür ederim.',
+            name: 'Hasan Okcu',
+            role: 'ASP.Net Core Bootcamp'
+        },
+
+        {
+            img: 'img/participants/Beyza_Yueksel_65efa14e87.webp',
+            quote: 'Yaptığımız projelerde iş hayatı için bizi hazırladı bu yüzden çok mutluyum. Çok verimli güzel bir süreçti emeği olan herkese teşekkür ederim.',
+            name: 'Beyza Yüksel',
+            role: 'ASP.Net Core Bootcamp'
+        },
+        {
+            img: 'img/participants/Ibrahim_Adam_5eff5cd585.webp',
+            quote: 'Bootcamp benim için çok verimli geçti diyebilirim özellikle Ahmet Kaya hocam gerçekten çok güzel bir anlatımı var tabi ki Techcareer ekibi de teknik sorunlarımız da bize hemen yardımcı oldular Techcareer\'den çok memnun kaldım.',
+            name: 'İbrahim Adam',
+            role: 'Back-End CodeForge Bootcamp'
+        },
+
+        {
+            img: 'img/participants/Berke_Ucaker_5d716bed3e.webp',
+            quote: 'Oldukça güzel bir süreçti, uzun zamandır öğrenmek isteyip doğru yeri bulamadığım için öğrenemediğimden dolayı bu bootcamp bana ilaç gibi geldi desem yeridir :) Ahmet Hoca\'m son derece güzel ve efektif bir şekilde bizlere dersi anlattı ve derste bizlerle etkileşimde bulunarak dersten kopmamamızı sağladı. ',
+            name: 'Berke Uçaker',
+            role: 'SQL Bootcamp'
+        },
+        {
+            img: 'img/participants/Zeynep_Ciplak_b1c26a7216.webp',
+            quote: 'Web frontend kodlamayı öğrenme sürecimde, FroundedTech Surge Bootcamp\'in etkisi büyüktü. Ahmet Kaya\'nın rehberliğinde, 48 saat süren 5 haftalık bu bootcamp, benim için bir dönüm noktasıydı.İlk günden itibaren, HTML, CSS ve JavaScript gibi dilleri öğrenip, gerçek projeler üzerinde çalışarak teorik bilgileri pratiğe dönüştürdük. Ödev projeleri, teknik becerilerimi ve araştırma yeteneğimi geliştirdi. Hatalar yapmak, sorunlarla karşılaşmak ve bunları çözmek, kodlama sürecinin doğal bir parçasıydı ve bu sayede gerçek bir öğrenme yaşadık.Bootcamp sonunda, HTML ve CSS ile sayfa yapılandırma ve stil verme konularında kendime güvenim arttı. JavaScript ile etkileşimli web uygulamaları geliştirme yeteneğim de gelişti. Bu bootcamp\'i tamamladığım için şanslı hissediyorum. FroundedTech Surge Bootcamp, teknik becerilerimi geliştirdi ve kendime güvenimi artırdı. Ahmet Kaya\'nın rehberliği bu deneyimi unutulmaz kıldı. Bu bootcamp\'i herkese tavsiye ediyorum.',
+            name: 'Zeynep Çıplak',
+            role: 'FroundedTech Surge Bootcamp'
         }
         // Daha fazla katılımcı eklenebilir
     ];

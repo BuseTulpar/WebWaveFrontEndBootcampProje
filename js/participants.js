@@ -25,7 +25,26 @@ function handleResize() {
 window.addEventListener('load', handleResize);
 window.addEventListener('resize', handleResize);
 
+//header ın dropdown işlevselliigi
 
+document.querySelectorAll('.mobile-menu .dropdown > a').forEach(function(dropdownToggle) {
+    dropdownToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        const dropdown = this.parentElement;
+        const isActive = dropdown.classList.contains('active');
+
+        // Önceki açık dropdownları kapat
+        document.querySelectorAll('.mobile-menu .dropdown').forEach(function(d) {
+            if (d !== dropdown) {
+                d.classList.remove('active');
+            }
+        });
+
+        // Tıklanan dropdown'u aç veya kapat
+        dropdown.classList.toggle('active', !isActive);
+    });
+});
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -43,9 +62,76 @@ document.addEventListener('DOMContentLoaded', () => {
             role: 'ASP.Net Core Bootcamp'
         },
 
+        {
+            img: 'img/participants/Beyza_Yueksel_65efa14e87.webp',
+            quote: 'Yaptığımız projelerde iş hayatı için bizi hazırladı bu yüzden çok mutluyum. Çok verimli güzel bir süreçti emeği olan herkese teşekkür ederim.',
+            name: 'Beyza Yüksel',
+            role: 'ASP.Net Core Bootcamp'
+        },
+
+        {
+            img: 'img/participants/Ibrahim_Adam_5eff5cd585.webp',
+            quote: 'Bootcamp benim için çok verimli geçti diyebilirim özellikle Ahmet Kaya hocam gerçekten çok güzel bir anlatımı var tabi ki Techcareer ekibi de teknik sorunlarımız da bize hemen yardımcı oldular Techcareer\'den çok memnun kaldım.',
+            name: 'İbrahim Adam',
+            role: 'Back-End CodeForge Bootcamp'
+        },
+
+        {
+            img: 'img/participants/Berke_Ucaker_5d716bed3e.webp',
+            quote: 'Oldukça güzel bir süreçti, uzun zamandır öğrenmek isteyip doğru yeri bulamadığım için öğrenemediğimden dolayı bu bootcamp bana ilaç gibi geldi desem yeridir :) Ahmet Hoca\'m son derece güzel ve efektif bir şekilde bizlere dersi anlattı ve derste bizlerle etkileşimde bulunarak dersten kopmamamızı sağladı. ',
+            name: 'Berke Uçaker',
+            role: 'SQL Bootcamp'
+        },
+        {
+            img: 'img/participants/Mert_Can_SUCU_d15f70f70f.webp',
+            quote: 'Benim için güzel bir süreçti, Ahmet hocamın katkılarıyla güzel bir bootcamp geçirdim. İnşallah bu sürecin devamında iş hayatıma başlamak istiyorum. ',
+            name: 'Mert Can Sucu',
+            role: 'Back-End CodeForge Bootcamp'
+        },
+        {
+            img: 'img/participants/Batuhan_CAKAR_f9ab017813.webp',
+            quote: 'Gerçekten çok faydalı bir eğitimdi. SQL ile alakalı en önemli kısımlar iyi bir şekilde ve uygulamalı olarak anlatıldı. Ayrıca eğitmenimiz kendisine yönelttiğim tüm soruları kısa sürede ve aklımda soru işareti kalmayacak şekilde cevaplandırdı. Emeği geçen herkese çok teşekkür ederim. 🙏',
+            name: 'Batuhan Çakar',
+            role: 'SQL Bootcamp'
+        },
+        {
+            img: 'img/participants/Emirhan_Koesem_7f7e9ffa90.webp',
+            quote: 'Techcareer.net\'in düzenlediği Vue.js bootcampine katıldım ve gerçekten çok verimli bir deneyim oldu. Eğitim boyunca, temel konulardan başlayarak ileri seviye uygulamalara kadar kapsamlı bir öğrenme süreci yaşadım. Eğitmenimiz son derece bilgili ve destekleyiciydi, her sorumuza detaylı yanıtlar verdi. Vue.js konusunda kendime güvenim arttı ve bu teknolojiyi projelerimde kullanabilir hale geldim. Techcareer.net\'e ve değerli eğitmenimize teşekkür ederim. Vue.js öğrenmek isteyen herkese bu bootcamp\'e katılmalarını tavsiye ederim. Bu eğitim, kariyerinizde yeni bir sayfa açmanıza yardımcı olabilir.',
+            name: 'Emirhan Kösem',
+            role: 'Vue.js Bootcamp - The Front-End Expedition'
+        },
+        {
+            img: 'img/participants/Oemer_Uecer_05ef36e9f1.webp',
+            quote: 'Bootcamp süreci benim için verimli ve istikrarlı bir şekilde geçti.Ders öncesi yapılacakların önceden bildirilmesi,dersin nasıl işleneceği hakkında bilgi verilmesi,ders esnasında,ders arasında, ders dışında eğitmene ulaşıp soru sorabilme imkanı beni ziyadesiyle memnun etti.Zorunlu haller dışında derslerin zamanında yapılması zorunlu haller durumunda da önceden bilgi verimesi oldukça iyiydi. Eğitmenimizin bitirme projelerini dahi yaparken bizlere her daim yardımcı olması beni ayrıca motive etti.',
+            name: 'Ömer Faruk Üçer',
+            role: 'SQL Bootcamp'
+        },
+        {
+            img: 'img/participants/Buesra_Dedeoglu_b3cdd733c7.webp',
+            quote: 'Bootcamp süreciyle ilgili beni en çok memnun eden taraf, eğitmen seçimiydi. Sadece teorik bilgilerle değil aynı zamanda sektörün güncel ihtiyaçlarına yönelik bilgilerle de dersi destekliyordu. Ara ara ödev verilmesinin gayet mantıklı olduğunu düşünüyorum. Sadece süreç içinde önceden belirlenen ders takviminin değişmesinin çok uygun olmadığını düşünüyorum. Seçim süresince ve eğitim sürecinde Techcareer ekibinin bizimle hep iletişimde olması ve onlara ulaşabilmemiz çok destekleyiciydi.',
+            name: 'Büşra Dedeoğlu',
+            role: 'Vodafone Oracle Database Administration Bootcamp'
+        },
+        {
+            img: 'img/participants/Helin_Okay_5b05a60b5f.webp',
+            quote: 'Ebelikten yazılıma...Merhabalar. Ben Helin okay Van yüzüncüyıl üniversite ebelik son sınıf öğrencisiyim. Genellikle online eğitimlere karşı biriyim. Verim alınması güç gelir bana.  Hele de alan dışıysam. Ama bu Bootcamp de öğrendiğim bilgiler ve pekiştirdiğim ödevlerle kendimi geliştirme imkanım oldu. Alan dışı olduğum için çok temelden anlatarak anlamadığım yerleri defalarca anlatmaktan üşenmeyen Caner hocamıza da emeklerinden dolayı ve bu Bootcampi gerçekleştiren emeği geçen herkese teşekkür ederim benim için güzel bir deneyim farklı network ağları oluşturmamı sağladı. CV eğitimleri, yüz yüze mülakat simülasyonu, githup eğitimleri ile sadece yazılım dersi değil bize her daim lazım olucak eğitimler düzenleyerek yazılım hikayeme katkıları oldu.',
+            name: 'Helin Okay',
+            role: 'DAKA - Back-End with C# Bootcamp'
+        },
+        {
+            img: 'img/participants/Fatma_Nur_Yetim_18a565529b.webp',
+            quote: 'Öncelikle eğitim sürecinin başlangıcından sonuna kadar sağladığınız destek için teşekkür etmek istiyorum. Programın içeriği oldukça zengindi ve eğitmenimizin konuları anlatma şekli oldukça verimliydi. Eğitim süresince en çok hoşuma giden şey, konuların teorik yanıyla pratik uygulamalar arasındaki dengeydi. Bu denge konuları daha iyi kavramama ve gerçek dünyadaki uygulamalarını daha iyi anlamama olanak sağladı. Ayrıca eğitim sırasında yaşadığımız etkileşimler ve grup çalışmaları da benim için oldukça değerliydi. Bu sayede farklı bakış açılarıyla konuları tartışma ve derinlemesine anlama şansına sahip oldum. Eğitim sonunda kazandığım bilgi ve becerilerle kendimi daha donanımlı hissediyorum. Bu eğitim kariyerimde yeni bir sayfa açmama ve kendimi geliştirmeme olanak sağladı. Katkılarınız ve emekleriniz için tekrar teşekkür ederim!',
+            name: 'Fatma Nur Yetim',
+            role: 'Vodafone Oracle Database Administration Bootcamp'
+        },
+        {
+            img: 'img/participants/Ceyda_Gueltekin_f405e32393.webp',
+            quote: 'İlk defa bir bootcamp e katıldım ve çok doğru bir yerde katılma şansı yakaladığımı düşünüyorum . Ekibin ilgisi , tavrı bootcamp kabul sürecinde oldukça titizdi . Üstelik eğitmenimizin dersi anlatışından , ilerleyişinden , herkese eşit muamele göstermesinden çok memnun kaldım . Kimsenin çekinmeden soru sorabileceği bir ortam yaratılmıştı tüm süreçte ve bunun önemli olduğunu düşünmekteyim . Bu imkanı sağladığınız için tekrar bütün ekibe çok teşekkür ediyorum .Sevgilerle ',
+            name: 'Ceyda Gültekin',
+            role: 'FroundedTech Surge Bootcamp'
+        },
 
 
-        
         {
             img: 'img/participants/Cengiz_Ergun_551b013b1b.webp',
             quote: 'Haftanın 3 günü aynı saatte aynı hedefe odaklanmış arkadaşlarla, bilgisini elinden gelen tüm çabayla sınıfa aktarmaya çalışan hocamızla, çok güzel bir iletişimi olan techcareer ekibiyle geçen bu yaklaşık 1 aylık dopdolu maratondan dolayı çok mutluyum. Bana moral, bilgi ve disiplin sağlayan bu program için çok teşekkür ederim.',

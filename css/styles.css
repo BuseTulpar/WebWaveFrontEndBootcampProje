@@ -131,6 +131,7 @@ nav ul li a {
     z-index: 1000; /* Hamburger menüden biraz daha düşük z-index */
     font-size: 0.875rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .mobile-menu.active {
@@ -201,6 +202,86 @@ nav ul li a {
         display: none;
     }
 }
+/* Dropdown Menüler */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Dropdown Menüyü Göster */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Mobil Menüdeki Dropdown Menüler */
+.mobile-menu .dropdown-menu {
+    display: none; /* Mobil görünümde dropdown menüler varsayılan olarak gizli */
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.mobile-menu .dropdown-menu.active {
+    display: block; /* Menü açıldığında göster */
+}
+
+.mobile-menu .dropdown-menu li a {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.mobile-menu .dropdown-menu li a:hover {
+    background-color: #ddd;
+}
+
+/* Dropdown Menü İçin Header ve Mobil Menüdeki Ayarlar */
+nav ul li {
+    position: relative; /* Dropdown menüler için gerekli */
+}
+
+nav ul li:hover .dropdown-menu {
+    display: block; /* Desktop görünümde dropdown menüler varsayılan olarak açık */
+}
+
+/* Mobil Menüde Dropdown Menüyü Gösterme İşlemi */
+.mobile-menu ul li {
+    position: relative;
+}
+
+.mobile-menu ul li .dropdown-menu {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.mobile-menu ul li.active .dropdown-menu {
+    display: block;
+}
+
 
 
 /*slider*/
@@ -748,6 +829,7 @@ button.event-button:hover {
 .participants-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%;
 }
 
 /* Katılımcı öğesi stil */
@@ -780,6 +862,7 @@ button.event-button:hover {
     display: flex;
     flex-direction: column;
     height: 100%; /* Yükseklik 100% */
+    font-size: 0.875rem;
     overflow: hidden; /* İçerik taşmasını engeller */
 }
 
@@ -789,6 +872,7 @@ button.event-button:hover {
     max-height: 100px; /* Sadece quote kısmının yüksekliği */
     margin: 0; /* Marginleri kaldır */
     padding-right: 8px; /* Scrollbar için sağ padding */
+    font-size: 0.875rem
 }
 
 /* Webkit tarayıcılar için scrollbar stil ayarları */
